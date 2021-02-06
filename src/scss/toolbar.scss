@@ -1,0 +1,38 @@
+@import 'vars';
+@import 'mixins';
+
+.excel__toolbar {
+  position: absolute;
+  top: $header-height;
+  left: 0;
+  right: 0;
+  height: $toolbar-height;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+    padding: 4px 8px;
+    height: 100%;
+
+    .edit {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .divider {
+      @include divider(20px);
+    }
+
+    .button {
+      @include button($active-color, 24px, 22px);
+
+      &--align {
+        @include button($active-color, 24px, 18px);
+      }
+    }
+  }
+}

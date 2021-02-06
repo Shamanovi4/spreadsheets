@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>Excel</title>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <div class="excel">
+        <div class="excel__header">
+          <div class="excel__header__inner">
+            <div class="excel__logo">
+              <img src="logo.png" alt="Excel" class="img" />
+            </div>
+            <input type="text" class="excel__title-input" value="New Table" />
+            <div class="table__control">
+              <div class="button">
+                <span class="material-icons"> delete </span>
+              </div>
+              <div class="button">
+                <span class="material-icons"> exit_to_app </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="excel__toolbar">
+          <div class="excel__toolbar__inner">
+            <div class="edit edit__fonts">
+              <div class="button">
+                <span class="material-icons"> format_bold </span>
+              </div>
+              <div class="button">
+                <span class="material-icons"> format_italic </span>
+              </div>
+              <div class="button">
+                <span class="material-icons"> format_strikethrough </span>
+              </div>
+            </div>
+            <span class="divider"></span>
+            <div class="edit edit__align">
+              <div class="button button--align">
+                <span class="material-icons"> format_align_left </span>
+              </div>
+              <div class="button button--align">
+                <span class="material-icons"> format_align_justify </span>
+              </div>
+              <div class="button button--align">
+                <span class="material-icons"> format_align_right </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="excel__formula">
+
+          <div class="excel__formula__inner">
+            <div class="formula__info"></div>
+            <span class="divider"></span>
+            <div class="formula__label">fx</div>
+            <span class="divider"></span>
+            <div class="formula__input" contenteditable="true"></div>
+          </div>
+
+        </div>
+
+        <div class="excel__table">
+
+          <div class="row">
+            <div class="row__info"></div>
+            <div class="row__data">
+              <div class="column">A</div>
+              <div class="column">B</div>
+              <div class="column">C</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="row__info">1</div>
+            <div class="row__data">
+              <div class="cell cell--selected"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="row__info">2</div>
+            <div class="row__data">
+              <div class="cell"></div>
+              <div class="cell"></div>
+              <div class="cell"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
