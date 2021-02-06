@@ -1,0 +1,34 @@
+@mixin button($color, $height, $font-size) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $height;
+  min-width: $height;
+  padding: 2px;
+  position: relative;
+  color: rgba($text-color, 0.8);
+  border-radius: 4px;
+
+  & span {
+    font-size: $font-size;
+  }
+
+  &:hover {
+    background-color: $button-bg-color;
+    cursor: pointer;
+  }
+
+  &:active,
+  &.active {
+    color: $color;
+    background-color: rgba($active-color, 0.1);
+  }
+}
+
+@mixin divider($height) {
+  content: '';
+  height: $height;
+  width: 1px;
+  margin: 0 4px;
+  background-color: $border-color;
+}
