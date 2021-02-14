@@ -10,6 +10,9 @@
     "semi": "off",
     "require-jsdoc": "off",
     "comma-dangle": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "linebreak-style": "off",
+    "operator-linebreak": "off",
+    "no-debugger":"warn"
   }
 }

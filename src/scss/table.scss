@@ -16,7 +16,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: $row-info-width;
+      min-width: $row-info-width;
       border-right: 1px solid $border-color;
       border-bottom: 1px solid $border-color;
       background-color: $row-info-color;
