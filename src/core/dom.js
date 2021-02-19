@@ -36,6 +36,37 @@ class Dom {
   off(eventType, callback) {
     this.$el.removeEventListener(eventType, callback)
   }
+
+  closest(selector) {
+    return $(this.$el.closest(selector))
+  }
+
+  getCoords() {
+    return this.$el.getBoundingClientRect()
+  }
+
+  get data() {
+    return this.$el.dataset
+  }
+
+  findAll(selector) {
+    return this.$el.querySelectorAll(selector)
+  }
+
+  find(selector) {
+    return this.$el.querySelector(selector)
+  }
+
+  getPropertyValue(selector, property, pseudoElement) {
+    return window.getComputedStyle(selector, pseudoElement)
+        .getPropertyValue(property)
+  }
+
+  css(styles = {}) {
+    Object.keys(styles).forEach(key => {
+      this.$el.style[key] = styles[key]
+    })
+  }
 }
 
 export function $(selector) {
