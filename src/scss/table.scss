@@ -6,7 +6,8 @@
   left: 0;
   right: 0;
   top: $header-height + $toolbar-height + $formula-height;
-  overflow-x: auto;
+  height: calc(100vh - #{$header-height + $toolbar-height + $formula-height});
+  overflow: scroll;
   user-select: none;
 
   .row {
@@ -69,7 +70,7 @@
     }
   }
 
-  .column {
+  .col {
     display: flex;
     position: relative;
     justify-content: center;
@@ -104,7 +105,7 @@
         opacity: 1;
       }
 
-      &:active + .column__resize-line {
+      &:active + .col__resize-line {
         opacity: 1;
       }
 
@@ -131,6 +132,7 @@
     border-bottom: 1px solid $cell-border-color;
     white-space: nowrap;
     outline: none;
+    cursor: default;
 
     &--selected {
       border: 2px solid $selection-color;

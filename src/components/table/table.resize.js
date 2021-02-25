@@ -6,16 +6,16 @@ export function resizeHandler($root, event) {
   const coords = $parent.getCoords()
   const eventType = $resizer.data.resize
   let newValue
-  const $resizerLine = $($parent.find(`[data-resize-line="${eventType}"]`))
-  const $columns = $root.findAll(
-      `[data-column="${$parent.data.column}"]`
+  const $resizerLine = $parent.findDom(`[data-resize-line="${eventType}"]`)
+  const $cols = $root.findAll(
+      `[data-col="${$parent.data.col}"]`
   )
-  const property = eventType === 'column' ? 'min-width' : 'min-height'
+  const property = eventType === 'col' ? 'min-width' : 'min-height'
   const minValue = $parent.getPropertyValue(
       $parent.$el, property
   )
 
-  if (eventType === 'column') {
+  if (eventType === 'col') {
     const tableHeight = $root.getPropertyValue(
         $root.$el, 'height'
     )
@@ -23,7 +23,7 @@ export function resizeHandler($root, event) {
   }
 
   document.onmousemove = e => {
-    if (eventType === 'column') {
+    if (eventType === 'col') {
       const delta = e.pageX - coords.right
       newValue = coords.width + delta
 
@@ -47,11 +47,11 @@ export function resizeHandler($root, event) {
     document.onmousemove = null
     document.onmouseup = null
 
-    if (eventType === 'column') {
+    if (eventType === 'col') {
       if (newValue >= minValue.slice(0, -2)) {
-        $columns.forEach(el => el.style.width = newValue + 'px')
+        $cols.forEach(el => el.style.width = newValue + 'px')
       } else {
-        $columns.forEach(el => el.style.width = minValue)
+        $cols.forEach(el => el.style.width = minValue)
       }
 
       $resizer.css({right: -5 + 'px'})
