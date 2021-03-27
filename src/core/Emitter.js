@@ -3,21 +3,25 @@ export class Emitter {
     this.listeners = {}
   }
 
-  emit(event, ...args) {
-    if (!Array.isArray(this.listeners[event])) {
+  // Inform listeners if there are any
+  // component.emit('table:select', {A: 1})
+  emit(eventName, ...args) {
+    if (!Array.isArray(this.listeners[eventName])) {
       return false
     }
-    this.listeners[event].forEach(listener => {
+    this.listeners[eventName].forEach(listener => {
       listener(...args)
     })
     return true
   }
 
-  subscribe(event, func) {
-    this.listeners[event] = []
-    this.listeners[event].push(func)
+  // Subscribe to notification / add new listener
+  // component.subscribe('table:select', (callback) => {})
+  subscribe(eventName, func) {
+    this.listeners[eventName] = this.listeners[eventName] || []
+    this.listeners[eventName].push(func)
     return () => {
-      this.listeners[event] = this.listeners[event]
+      this.listeners[eventName] = this.listeners[eventName]
           .filter(listener => listener !== func)
     }
   }

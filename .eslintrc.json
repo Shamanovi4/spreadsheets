@@ -13,6 +13,6 @@
     "arrow-parens": "off",
     "linebreak-style": "off",
     "operator-linebreak": "off",
-    "no-debugger":"warn"
+    "no-debugger":"off"
   }
 }
