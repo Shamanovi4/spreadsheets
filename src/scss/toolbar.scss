@@ -17,10 +17,31 @@
     padding: 4px 8px;
     height: 100%;
 
-    .edit {
+    .edit-tool {
       display: flex;
       align-items: center;
+      position: relative;
       font-weight: 500;
+
+      &--align {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 24px;
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        padding: 8px 4px;
+        background-color: $page-bg-color;
+        border-radius: 4px;
+        box-shadow: 0 4px 16px -4px $shadow-color;
+        font-weight: 500;
+
+        &.active {
+          opacity: 1;
+          pointer-events: all;
+        }
+      }
     }
 
     .divider {

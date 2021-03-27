@@ -1,48 +1,50 @@
-import {ExcelComponent} from '@core/ExcelComponent'
+import {ExcelStateComponent} from '@core/ExcelStateComponent'
+import {$} from '@core/dom'
+import {createToolbar} from '@/components/toolbar/toolbar.template'
+import {defaultStyles} from '@/constants'
 
-export class Toolbar extends ExcelComponent {
+export class Toolbar extends ExcelStateComponent {
   static className = 'excel__toolbar'
 
   constructor($root, options) {
     super($root, {
       name: 'Toolbar',
       listeners: ['click'],
+      subscribe: ['currentStyles'],
       ...options
     })
   }
 
+  prepare() {
+    this.initState(defaultStyles)
+  }
+
+  get template() {
+    return createToolbar(this.state)
+  }
+
   toHTML() {
-    return `
-    <div class="excel__toolbar__inner">
-      <div class="edit edit__fonts">
-        <div class="button">
-          <span class="material-icons"> format_bold </span>
-        </div>
-        <div class="button">
-          <span class="material-icons"> format_italic </span>
-        </div>
-        <div class="button">
-          <span class="material-icons"> format_strikethrough </span>
-        </div>
-      </div>
-      <span class="divider"></span>
-      <div class="edit edit__align">
-        <div class="button button--align">
-          <span class="material-icons"> format_align_left </span>
-        </div>
-        <div class="button button--align">
-          <span class="material-icons"> format_align_justify </span>
-        </div>
-        <div class="button button--align">
-          <span class="material-icons"> format_align_right </span>
-        </div>
-      </div>
-    </div>
-    `
+    return this.template
+  }
+
+  storeChanged(changes) {
+    this.setState(changes.currentStyles)
   }
 
   onClick(event) {
-    console.log(event.target)
+    const $target = $(event.target)
+
+    if ($target.data.type === 'button') {
+      const value = JSON.parse($target.data.value)
+      const mergedValue = {...value, ...{activeDropDown: 'none'}}
+
+      $target.data.buttonType === 'dropdown'
+          ? this.setState(value)
+          : this.setState(mergedValue)
+      $target.data.buttonType === 'dropdown'
+          ? this.$emit('toolbar:applyStyle', value)
+          : this.$emit('toolbar:applyStyle', mergedValue)
+    }
   }
 }
 

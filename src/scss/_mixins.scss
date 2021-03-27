@@ -5,6 +5,7 @@
   height: $height;
   min-width: $height;
   padding: 2px;
+  margin: 0 1px;
   position: relative;
   color: rgba($text-color, 0.8);
   border-radius: 4px;
@@ -22,6 +23,10 @@
   &.active {
     color: $color;
     background-color: rgba($active-color, 0.1);
+  }
+
+  .material-icons {
+    pointer-events: none;
   }
 }
 

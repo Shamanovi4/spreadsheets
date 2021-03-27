@@ -14,7 +14,7 @@ class Dom {
   }
 
   text(text) {
-    if (typeof text === 'string') {
+    if (typeof text === 'string' || typeof text === 'number') {
       this.$el.textContent = text
       return this
     }
@@ -56,6 +56,20 @@ class Dom {
     return this.$el.getBoundingClientRect()
   }
 
+  getOffset() {
+    return {
+      top: this.$el.offsetTop,
+      left: this.$el.offsetLeft
+    }
+  }
+
+  getScroll() {
+    return {
+      top: this.$el.scrollTop,
+      left: this.$el.scrollLeft
+    }
+  }
+
   get data() {
     return this.$el.dataset
   }
@@ -63,10 +77,6 @@ class Dom {
   findAll(selector) {
     return this.$el.querySelectorAll(selector)
   }
-
-  /* find(selector) {
-    return this.$el.querySelector(selector)
-  } */
 
   findDom(selector) {
     return $(this.$el.querySelector(selector))
@@ -81,6 +91,13 @@ class Dom {
     Object.keys(styles).forEach(key => {
       this.$el.style[key] = styles[key]
     })
+  }
+
+  getStyles(styles = []) {
+    return styles.reduce((res, s) => {
+      res[s] = this.$el.style[s]
+      return res
+    }, {})
   }
 
   addClass(className) {
@@ -105,6 +122,14 @@ class Dom {
   focus() {
     this.$el.focus()
     return this
+  }
+
+  attribute(name, value) {
+    if (value) {
+      this.$el.setAttribute(name, value)
+      return this
+    }
+    return this.$el.getAttribute(name)
   }
 }
 
