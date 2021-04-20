@@ -1,5 +1,5 @@
 {
-  "name": "excel",
+  "name": "spreadsheets",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -11,19 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shamanovi4/excel.git"
+    "url": "git+https://github.com/Shamanovi4/spreadsheets.git"
   },
   "keywords": [
     "js",
     "javascript",
-    "excel"
+    "spreadsheets"
   ],
   "author": "Roman Chernitskyi",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Shamanovi4/excel/issues"
+    "url": "https://github.com/Shamanovi4/spreadsheets/issues"
   },
-  "homepage": "https://github.com/Shamanovi4/excel#readme",
+  "homepage": "https://github.com/Shamanovi4/spreadsheets#readme",
   "browserslist": "> 0.25%, not dead",
   "private": "true",
   "devDependencies": {
