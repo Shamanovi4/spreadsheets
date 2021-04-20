@@ -1,4 +1,4 @@
-import {ExcelComponent} from '@core/ExcelComponent'
+import {SpreadsheetComponent} from '@core/SpreadsheetComponent'
 import {$} from '@core/dom'
 import {createTable} from '@/components/table/table.template'
 import {resizeHandler} from '@/components/table/table.resize'
@@ -9,8 +9,8 @@ import * as actions from '@/redux/actions'
 import {defaultStyles} from '@/constants'
 import {parse} from '@core/parse'
 
-export class Table extends ExcelComponent {
-  static className = 'excel__table'
+export class Table extends SpreadsheetComponent {
+  static className = 'spreadsheet__table'
 
   constructor($root, options) {
     super($root, {

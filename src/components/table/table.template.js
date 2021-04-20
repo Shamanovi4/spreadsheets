@@ -50,7 +50,7 @@ function toCell(row, state) {
         data-col="${indexChar}"
         data-id="${id}"
         data-value="${data || ''}"
-        style="${styles} width: ${width}"
+        style="${styles}; width: ${width}"
       >
       <span>${parse(data) || ''}</span>
       </div>
@@ -175,5 +175,5 @@ export function createTable(rowsCount, colsCount, state = {}) {
   grid = wrap(grid, 'div', 'grid-fixed-container', 'data-type="fixed"')
 
 
-  return wrap(notationRow + grid, 'div', 'excel__table__inner')
+  return wrap(notationRow + grid, 'div', 'spreadsheet__table__inner')
 }

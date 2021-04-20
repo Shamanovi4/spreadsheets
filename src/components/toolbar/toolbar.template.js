@@ -89,5 +89,5 @@ export function createToolbar(state) {
   alignButtons = wrap(alignDropDown + alignButtons, 'div', 'edit-tool')
 
   return wrap(fontButtons + insertDivider() + alignButtons,
-      'div', 'excel__toolbar__inner')
+      'div', 'spreadsheet__toolbar__inner')
 }

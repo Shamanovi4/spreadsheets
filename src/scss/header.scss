@@ -1,31 +1,29 @@
 @import 'vars';
 @import 'mixins';
 
-.excel {
-  &__header {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: $header-height;
+.spreadsheet__header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: $header-height;
 
-    &__inner {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      padding: 4px 8px;
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 4px 8px;
 
-      .table__control {
-        margin: 4px 8px 4px auto;
+    .control-panel {
+      margin: 4px 8px 4px auto;
 
-        .button {
-          @include button($active-color, 32px, 24px);
-        }
+      .button {
+        @include button($active-color, 32px, 24px);
       }
     }
   }
 
-  &__title-input {
+  .title-input {
     margin: 0;
     padding: 4px;
     color: $text-color;
@@ -45,7 +43,7 @@
     }
   }
 
-  &__logo {
+  .logo {
     display: flex;
     align-items: center;
     justify-content: center;
