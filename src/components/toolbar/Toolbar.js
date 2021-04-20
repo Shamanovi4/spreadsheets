@@ -1,10 +1,10 @@
-import {ExcelStateComponent} from '@core/ExcelStateComponent'
+import {SpreadsheetStateComponent} from '@core/SpreadsheetStateComponent'
 import {$} from '@core/dom'
 import {createToolbar} from '@/components/toolbar/toolbar.template'
 import {defaultStyles} from '@/constants'
 
-export class Toolbar extends ExcelStateComponent {
-  static className = 'excel__toolbar'
+export class Toolbar extends SpreadsheetStateComponent {
+  static className = 'spreadsheet__toolbar'
 
   constructor($root, options) {
     super($root, {

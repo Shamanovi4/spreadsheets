@@ -1,7 +1,7 @@
 @import 'vars';
 @import 'mixins';
 
-.excel-tables {
+.dashboard {
   &__header {
     position: absolute;
     top: 0;
@@ -63,31 +63,44 @@
     }
   }
 
-  &__list {
+  .spreadsheets-list {
     max-width: 900px;
     margin: ($header-height + 16px) auto 16px auto;
-
-    &:hover &__item {
-      border-bottom: 0;
-    }
+    list-style-type: none;
 
     &__item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 50px;
-      width: 100%;
-      font-size: 14px;
-      padding: 4px 16px;
-      cursor: pointer;
+      position: relative;
 
-      &:not(:last-child) {
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 32px;
+        right: 32px;
+        z-index: -1;
         border-bottom: 1px solid $border-color;
       }
 
       &:hover {
         border-radius: 25px;
-        background-color: rgba($active-color, 0.15);
+        background-color: $light-active-color;
+      }
+
+      &:hover::after {
+        border-bottom: 0;
+      }
+
+      &__link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        width: 100%;
+        font-size: 14px;
+        padding: 4px 16px;
+        cursor: pointer;
+        text-decoration: none;
+        color: $text-color;
       }
 
       &__name {
@@ -96,6 +109,25 @@
         letter-spacing: 0.2px;
         color: $text-color;
       }
+
+      &__date {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba($text-color, 0.9);
+      }
     }
+  }
+
+  .no-spreadsheets {
+    position: absolute;
+    top: $header-height;
+    right: 0;
+    left: 0;
+    padding-top: 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    color: $text-color;
   }
 }

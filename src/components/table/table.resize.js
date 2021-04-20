@@ -1,7 +1,7 @@
 import {$} from '@core/dom'
 
 function findRow(event, rowId) {
-  const $table = $(event.target).closest('.excel__table')
+  const $table = $(event.target).closest('.spreadsheet__table')
   const $grid = $table.findDom('.grid')
   return $grid.findDom(`[data-row="${rowId}"]`)
 }

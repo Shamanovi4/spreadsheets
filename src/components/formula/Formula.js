@@ -1,8 +1,8 @@
-import {ExcelComponent} from '@core/ExcelComponent'
+import {SpreadsheetComponent} from '@core/SpreadsheetComponent'
 import {$} from '@core/dom'
 
-export class Formula extends ExcelComponent {
-  static className = 'excel__formula'
+export class Formula extends SpreadsheetComponent {
+  static className = 'spreadsheet__formula'
 
   constructor($root, options) {
     super($root, {
@@ -15,7 +15,7 @@ export class Formula extends ExcelComponent {
 
   toHTML() {
     return `
-    <div class="excel__formula__inner">
+    <div class="spreadsheet__formula__inner">
       <div class="formula__info"></div>
       <span class="divider"></span>
       <div class="formula__label">fx</div>
