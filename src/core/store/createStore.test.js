@@ -63,7 +63,7 @@ describe('createStore:', () => {
 
     expect(handler).not.toHaveBeenCalled()
   })
-  
+
   test('should dispatch in async way', () => {
     return new Promise(resolve => {
       setTimeout(() => {
@@ -76,5 +76,4 @@ describe('createStore:', () => {
       }, 1000)
     })
   })
-
 })

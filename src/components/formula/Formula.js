@@ -15,17 +15,17 @@ export class Formula extends SpreadsheetComponent {
 
   toHTML() {
     return `
-    <div class="spreadsheet__formula__inner">
-      <div class="formula__info"></div>
-      <span class="divider"></span>
-      <div class="formula__label">fx</div>
-      <span class="divider"></span>
-      <div 
-      id="formula" class="formula__input"
-      contenteditable="true" spellcheck="false"
-      >
+      <div class="spreadsheet__formula__inner">
+        <div class="formula__info"></div>
+        <span class="divider"></span>
+        <div class="formula__label">fx</div>
+        <span class="divider"></span>
+        <div 
+        id="formula" class="formula__input"
+        contenteditable="true" spellcheck="false"
+        >
+        </div>
       </div>
-    </div>
     `
   }
 

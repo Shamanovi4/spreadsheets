@@ -4,16 +4,16 @@ function toButton(buttonClass, isDropDown) {
   return function(button) {
     const arrow = `<span class="material-icons"> arrow_drop_down </span>`
     return `
-    <div 
-      class="${buttonClass} ${button.active ? 'active' : ''}"
-      data-type="button"
-      ${isDropDown ? 'data-button-type="dropdown"' : ''}
-      data-value='${JSON.stringify(button.value)}'
-    >
-      <span class="material-icons"> ${button.icon} </span>
-      ${isDropDown ? arrow : ''}
-    </div>
-  `
+      <div 
+        class="${buttonClass} ${button.active ? 'active' : ''}"
+        data-type="button"
+        ${isDropDown ? 'data-button-type="dropdown"' : ''}
+        data-value='${JSON.stringify(button.value)}'
+      >
+        <span class="material-icons"> ${button.icon} </span>
+        ${isDropDown ? arrow : ''}
+      </div>
+    `
   }
 }
 

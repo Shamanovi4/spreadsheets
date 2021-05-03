@@ -25,10 +25,10 @@ function getHeight(state, index) {
 
 function insertSelection() {
   return `
-  <div class="table-selection" 
-    data-type="selection"
-  >
-  </div>
+    <div class="table-selection" 
+      data-type="selection"
+    >
+    </div>
   `
 }
 
