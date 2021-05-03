@@ -23,20 +23,20 @@ export class Header extends SpreadsheetComponent {
   toHTML() {
     const tableTitle = this.store.getState().tableTitle || defaultTitle
     return `
-    <div class="spreadsheet__header__inner">
-      <a class="logo" href="#dashboard">
-        <img src="logo.png" alt="Spreadsheet" class="img" />
-      </a>
-      <input class="title-input" type="text" value="${tableTitle}">
-      <div class="control-panel">
-        <div class="button" data-button-type="delete">
-          <span class="material-icons"> delete </span>
-        </div>
-        <div class="button" data-button-type="exit">
-          <span class="material-icons"> exit_to_app </span>
+      <div class="spreadsheet__header__inner">
+        <a class="logo" href="#dashboard">
+          <img src="logo.png" alt="Spreadsheet" class="img" />
+        </a>
+        <input class="title-input" type="text" value="${tableTitle}">
+        <div class="control-panel">
+          <div class="button" data-button-type="delete">
+            <span class="material-icons"> delete </span>
+          </div>
+          <div class="button" data-button-type="exit">
+            <span class="material-icons"> exit_to_app </span>
+          </div>
         </div>
       </div>
-    </div>
     `
   }
 
