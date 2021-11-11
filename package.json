@@ -8,7 +8,9 @@
     "test:watch": "jest --watch",
     "start": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack serve --mode production",
-    "lint": "npx eslint ./src"
+    "lint": "npx eslint ./src",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/Shamanovi4/spreadsheets/issues"
   },
-  "homepage": "https://github.com/Shamanovi4/spreadsheets#readme",
+  "homepage" : "http://shamanovi4.github.io/spreadsheets",
   "browserslist": "> 0.25%, not dead",
   "private": "true",
   "devDependencies": {
@@ -40,6 +42,7 @@
     "eslint": "^7.18.0",
     "eslint-config-google": "^0.14.0",
     "eslint-webpack-plugin": "^2.4.3",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^4.5.1",
     "jest": "^26.6.3",
     "mini-css-extract-plugin": "^1.3.4",
@@ -56,8 +59,8 @@
   },
   "jest": {
     "moduleNameMapper": {
-    "^@/(.*)$": "<rootDir>/src/$1",
-    "^@core/(.*)$": "<rootDir>/src/core/$1"
+      "^@/(.*)$": "<rootDir>/src/$1",
+      "^@core/(.*)$": "<rootDir>/src/core/$1"
     }
   }
 }
