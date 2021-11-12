@@ -2,31 +2,30 @@
   "name": "spreadsheets",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Roman Chernitskyi",
+  "license": "ISC",
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "start": "cross-env NODE_ENV=development webpack serve",
-    "build": "cross-env NODE_ENV=production webpack serve --mode production",
-    "lint": "npx eslint ./src"
+    "clean": "rm dist/bundle.js",
+    "start": "cross-env NODE_ENV=development webpack serve --mode development",
+    "build": "webpack --mode production",
+    "test": "jest"
   },
-  "repository": {
+	"repository": {
     "type": "git",
     "url": "git+https://github.com/Shamanovi4/spreadsheets.git"
   },
-  "keywords": [
-    "js",
-    "javascript",
-    "spreadsheets"
-  ],
-  "author": "Roman Chernitskyi",
-  "license": "ISC",
-  "bugs": {
+	"bugs": {
     "url": "https://github.com/Shamanovi4/spreadsheets/issues"
   },
   "homepage": "https://github.com/Shamanovi4/spreadsheets#readme",
   "browserslist": "> 0.25%, not dead",
-  "private": "true",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "babel-jest": "^26.6.3",
+    "normalize.css": "^8.0.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.13.16",
     "@babel/plugin-proposal-class-properties": "^7.12.13",
@@ -47,14 +46,12 @@
     "sass-loader": "^10.1.1",
     "webpack": "^5.18.0",
     "webpack-cli": "^4.4.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "babel-jest": "^27.3.1",
+    "node-sass": "^6.0.1",
+    "style-loader": "^3.3.1"
   },
-  "dependencies": {
-    "@babel/polyfill": "^7.12.1",
-    "babel-jest": "^26.6.3",
-    "normalize.css": "^8.0.1"
-  },
-  "jest": {
+	"jest": {
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1",
       "^@core/(.*)$": "<rootDir>/src/core/$1"
