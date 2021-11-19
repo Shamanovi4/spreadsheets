@@ -15,6 +15,8 @@
     padding: 4px 8px;
 
     .control-panel {
+      display: flex;
+      align-items: center;
       margin: 4px 8px 4px auto;
 
       .button {
@@ -24,15 +26,14 @@
   }
 
   .title-input {
-    margin: 0;
+    max-width: 240px;
+    width: 100%;
     padding: 4px;
-    color: $text-color;
     border: 1px solid transparent;
     border-radius: 4px;
-    height: 32px;
+    color: $text-color;
     font-size: 18px;
-    line-height: 1.2;
-    outline: none;
+    font-family: 'Open Sans', sans-serif;
 
     &:hover {
       border-color: $border-color;
@@ -47,18 +48,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px;
-    height: 56px;
+    min-width: 48px;
+    min-height: 48px;
     cursor: pointer;
     margin: 4px 8px;
 
     &:active {
       border-radius: 50%;
       background-color: $button-bg-color;
-    }
-
-    .img {
-      width: 40px;
     }
   }
 }
