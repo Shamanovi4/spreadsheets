@@ -56,7 +56,7 @@ const config = {
           to: path.resolve(__dirname, 'dist')
         },
         {
-          from: path.resolve(__dirname, 'src/assets'),
+          from: path.resolve(__dirname, 'src/logo.png'),
           to: path.resolve(__dirname, 'dist')
         },
       ],

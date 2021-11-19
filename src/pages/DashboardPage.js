@@ -8,7 +8,7 @@ export class DashboardPage extends Page {
     return $.create('div', 'dashboard').html(`
       <div class="dashboard__header">
         <div class="dashboard__header__logo">
-          <img src="src/assets/images/logo.png" alt="Logo" />
+          <img src="logo.png" alt="Logo" />
         </div>
         <span class="dashboard__header__title">Spreadsheets</span>
       </div>
