@@ -25,7 +25,7 @@ export class Header extends SpreadsheetComponent {
     return `
       <div class="spreadsheet__header__inner">
         <a class="logo" href="#dashboard">
-          <img src="logo.png" alt="Spreadsheet" class="img" />
+          <img src="src/assets/images/logo.png" alt="Logo" />
         </a>
         <input class="title-input" type="text" value="${tableTitle}">
         <div class="control-panel">

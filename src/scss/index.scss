@@ -1,5 +1,6 @@
 @import '~normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
 
 @import 'vars';
 @import 'mixins';
@@ -14,7 +15,11 @@
 * {
   margin: 0;
   padding: 0;
+	border: 0;
+	outline: none;
   box-sizing: border-box;
+	text-decoration: none;
+	background: transparent;
 }
 
 body {
@@ -26,11 +31,9 @@ body {
 .spreadsheet {
   position: relative;
   background-color: $page-bg-color;
-  height: 100%;
-  max-width: 100%;
 }
 
-.img {
+img {
   display: block;
   max-width: 100%;
   height: auto;

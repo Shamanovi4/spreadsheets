@@ -183,10 +183,7 @@
 
     .grid-scrollable-wrapper {
       position: relative;
-      height: calc(
-        100vh - #{$header-height + $toolbar-height + $formula-height +
-          $row-height}
-      );
+      height: calc(100vh - #{$header-height + $toolbar-height + $formula-height + $row-height});
 
       overflow-x: hidden;
       overflow-y: scroll;
