@@ -1,5 +1,5 @@
 # Spreadsheets
-Based of a JavaScript Course this project was done and enhanced by me to develop and consolidate my vanilla JS skills. The goal of this project was to create vanilla JS framework from scratch and then create some kind of Google Spreadsheets clone. This SPA was written with the use of HTML, SCSS, JS, Redux (written from scratch), BEM, Webpack.
+Based of a JavaScript Course this project was done and enhanced by me to develop and consolidate my vanilla JS skills. The goal of this project was to create vanilla JS framework from scratch and then create some kind of Google Spreadsheets clone.
 
 # Features:
 - Creating, editing, deleting spreadsheet.
